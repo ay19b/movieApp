@@ -63,8 +63,6 @@ function Search({data,title}) {
                data.map((movie) => <Movie key={movie.id} {...movie} lin={`/movie/${movie.id}`}/>)}
   
             </div>
-  
-
             </div> 
         </Container>
          <Footer />

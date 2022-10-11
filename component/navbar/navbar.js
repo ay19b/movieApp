@@ -75,6 +75,7 @@ const handleSubmit = (e) => {
              id="outlined-hidden-label-small"
              size="small"
              variant="outlined"
+             style={{color:'white'}}
              className={classes.inputForm}
              value={searchText}
              onChange={(e) => setSearchText(e.target.value)}
