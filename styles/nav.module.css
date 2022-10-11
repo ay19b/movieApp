@@ -1,0 +1,86 @@
+.navbar{
+    padding: 1%;
+    position: absolute;
+    z-index: 11;
+    display: flex;
+    width: 100%;
+};
+.NavSearch{
+    display: flex;
+    padding: 25px 0 !important;
+    z-index: 11;
+    position: relative;
+    margin-bottom: 8%;
+};
+.active{
+    position: fixed;
+    z-index:1001;
+    width: 100%;
+    background: #10141f;
+    padding-top: 15px !important;
+    animation-name: scrollNav;
+    animation-duration: .4s;
+};
+.ActiveSearch{
+    width: 100%;
+    z-index: 1001;
+    position: fixed;
+    background: #10141f;
+    padding: 1%;
+    animation-name: scrollNav;
+    animation-duration: .4s;
+    margin-top: -4%;
+};
+@keyframes scrollNav{
+    0%{
+      opacity: 0;
+      transform: translateY(-60px);
+    };
+    100%{
+      opacity: 1;
+      transform: translateY(0);
+    };
+};
+.listNav{
+    align-items: center;
+    position: fixed;
+};
+.listNavActive{
+    background-color: black;
+    padding-bottom: 2%;
+    align-items: center;
+    position: fixed;
+};
+.logo{
+    font-family: Sonsie One cursive;
+}
+.leftSide{
+    display: flex ;
+    align-items: center;
+    color:white;
+    justify-content: space-around;
+};
+.iconSearch{
+    color:white;
+    font-size: 1.4rem;
+}
+.rightSide{
+    display: flex;
+    justify-content: space-around;
+}
+.btnRgst{
+    background:white;
+    border: none;
+    color: black;
+    font-weight: bold;
+};
+.btnRgst:hover{
+    background:white, 
+};
+.btnSng{
+    color: white;
+};
+.inputForm{
+    border: 0.5px solid #757373;
+    border-radius: 6px;
+};
