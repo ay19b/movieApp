@@ -78,10 +78,10 @@ a {
   color: aliceblue;
 }
 .css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root{
-  color:white;
+  color:white !important;
 }
 .css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
-  width: 22rem;
+  width: 22rem !important;
 }
 .genre{
   margin-left: 5%;
