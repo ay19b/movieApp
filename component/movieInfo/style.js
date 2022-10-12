@@ -38,17 +38,17 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
+        width: '50rem',
     },
     infGenre:{
         display: 'flex',
-        justifyContent: 'space-between',
         alignItems: 'center',
     },
     date:{
         display: 'flex',
-        justifyContent: 'space-between',
         alignItems: 'center',
         width: '5rem',
+        marginLeft:'2%'
     },
     prg:{
         width:'60%',

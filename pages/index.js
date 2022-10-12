@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from 'react';
-import Movies from "../component/movies";
+import Movies from "../component/categ/movies";
 import MoviesObj from "../component/TMDB";
 import Banner from "../component/banner/banner";
 import Loading from "../component/loading/loading";
@@ -10,36 +10,22 @@ import { useRouter } from "next/router";
 
 
 export default function Home() {
-  const [showIntro, setShowIntro] = useState(undefined);
-  const [isLoading, setIsLoading] = useState(undefined);
-  const [isSearch, setIsSearch] = useState(false);
-  const [searchText, setSearchText] = useState("");
-  const router = useRouter();
+  const [loading, setLoading] = useState(false);
 
 
   useEffect(() => {
+    setLoading(true);
     setTimeout(() => {
-      setIsLoading(true)
-      setTimeout(() => {
-        setShowIntro(true);
-      }, 1000);
-    }, 4500)
-  },[]);
-
+      setLoading(false);
+    }, 2000);
+  }, []);
 
 return (
   <>
-   {!showIntro ?(
-      <>
-      {!isLoading ?(
+   
+      {loading ?(
          <Loading title={'molla'}/>
        ):(
-         <Loading title={'molla'}/>
-       )
-         
-       }
-      </>
-    ):(
       <>
        <Head>
         <title>molla</title>

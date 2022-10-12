@@ -1,10 +1,10 @@
 import React from "react";
 import useStyles from './style';
-import {BsFillStarFill,BsFillPlayFill} from "react-icons/bs";
+import {BsFillStarFill} from "react-icons/bs";
 import Typography from '@mui/material/Typography';
 import NextLink from 'next/link';
 import Image from "next/image";
-import Loading from "./loading/loading";
+
 
 const IMAGE_API = "https://image.tmdb.org/t/p/w1280";
 

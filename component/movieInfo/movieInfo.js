@@ -29,6 +29,11 @@ function MovieInfo({ Data }) {
   const [imageError, setImageError] = useState(false);
   const img= `https://image.tmdb.org/t/p/w1280/${Data.poster_path}`
 
+
+
+
+
+
   return (
   <>
    <Head>
@@ -46,8 +51,7 @@ function MovieInfo({ Data }) {
     <div className={classes.grid}>
 
     <div className={classes.contImg}>
-        
-    {Data.poster_path ? (
+        {Data.poster_path ? (
             <img src={IMAGE_API + Data.poster_path} alt={Data.title} className={classes.img}/>
         ) : (
         <img src="no-cover.png" alt={Data.title} />
@@ -57,27 +61,27 @@ function MovieInfo({ Data }) {
        <Typography variant="h3" gutterBottom component="div">
           {Data.title}
       </Typography>
-      <div className={classes.inf}>
-      
       {Object.keys(genre).map((key) => {
          return (
            <div key={key} className={classes.infGenre}>
               {genre[key||null].map((genre) => {
                 return (
-                 <Typography  variant="h6" gutterBottom component="div"  key={genre.id} style={{marginLeft: '7%',display: 'block ruby'}}>
+                  <>
+                 <Typography  variant="h6" gutterBottom component="div"  key={genre.id} className='genre'>
                   {genre.name}
                   </Typography>
+                  
+                  </>
                 )
                })}
+               <Typography variant="h6" gutterBottom component="div" className={classes.date}>
+                  <GoCalendar className='calander'/>{Data.release_date.split("-")[0]}
+                </Typography>
            </div>
          )
        })}
-       <Typography variant="h6" gutterBottom component="div" className={classes.date}>
-       <GoCalendar style={{color: 'rgb(185, 75, 22'}}/>{Data.release_date.split("-")[0]}
-      </Typography>
-       </div>
-      <Typography variant="subtitle1" gutterBottom component="div" style={{marginTop: '1%'}}>
-      {Data.overview}
+       <Typography variant="subtitle1" gutterBottom component="div" style={{marginTop: '1%'}}>
+         {Data.overview}
       </Typography>
           
        </div>
@@ -93,4 +97,3 @@ function MovieInfo({ Data }) {
 }
 
 export default MovieInfo;
-

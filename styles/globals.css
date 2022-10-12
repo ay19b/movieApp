@@ -31,11 +31,7 @@ a {
 .react-multi-carousel-list{
   margin-bottom: 2%;
 }
-.css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
-  width:80% !important;
-  border: 0.5px solid #757373;
-  border-radius: 6px;
-}
+
 .nfLoader {
   position: absolute;
   top: 50%;
@@ -76,27 +72,28 @@ a {
 
 .swiper-slide{
   width: 80%;
-  
 }
-.css-1ua80n0-MuiInputBase-input-MuiOutlinedInput-input{
-  color: aliceblue;
-  border-color: white !important;
-};
-.css-1ua80n0-MuiInputBase-input-MuiOutlinedInput-input{
-  color: aliceblue;
-  border-color: white !important;
-};
-.css-1d3z3hw-MuiOutlinedInput-notchedOutline{
-  border-color: white !important;
-  color: aliceblue;
-};
 .css-1d3z3hw-MuiOutlinedInput-notchedOutline{
   border-color: rgba(255, 255, 255, 0.23) !important;
   color: aliceblue;
-};
-.css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root{
-  border: 1px solid red !important;
 }
 .css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root{
   color:white;
+}
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+  width: 22rem;
+}
+.genre{
+  margin-left: 5%;
+  display: block ruby;
+  border-radius: 16px;
+  border: 1px solid white;
+  padding: 4px;
+}
+.genre:nth-child(1) {
+  margin-left: 0%;
+}
+.calander{
+  margin-right: 6px;
+  color: red;
 }

@@ -11,6 +11,10 @@ import Image from 'next/image';
 import { useRouter } from "next/router";
 import styles from '../../styles/nav.module.css'
 
+
+
+
+
 function Navbar({navNormal,navActive}) {
   const classes = useStyles();
   const router = useRouter();
@@ -48,9 +52,10 @@ useEffect(() => {
 const handleSubmit = (e) => {
   e.preventDefault();
   setIsSearch(false);
+  searchText==''?null:router.push(`/search/${searchText}`);
   setTimeout(() => {
-    router.push(`/search/${searchText}`);
-  }, 1000)
+    setSearchText('')
+  }, 1000);
 };
 
   
@@ -72,8 +77,6 @@ const handleSubmit = (e) => {
              id="outlined-hidden-label-small"
              size="small"
              variant="outlined"
-             style={{color:'white'}}
-             className={classes.inputForm}
              value={searchText}
              onChange={(e) => setSearchText(e.target.value)}
              placeholder="Find movies,TV shows and more"
