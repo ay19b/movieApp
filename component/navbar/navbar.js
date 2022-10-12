@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import {HiSearch} from "react-icons/hi";
@@ -12,7 +10,6 @@ import NextLink from 'next/link'
 import Image from 'next/image';
 import { useRouter } from "next/router";
 import styles from '../../styles/nav.module.css'
-import Loading from "../loading/loading";
 
 function Navbar({navNormal,navActive}) {
   const classes = useStyles();

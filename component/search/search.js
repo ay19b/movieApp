@@ -12,48 +12,41 @@ import Footer from "../footer/footer";
 function Search({data,title}) {
     const classes = useStyles();
     const [search, setSearch] = useState([data]);
-    const [showIntro, setShowIntro] = useState(undefined);
-    const [isLoading, setIsLoading] = useState(undefined);
+    const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        setTimeout(() => {
-          setIsLoading(true)
-          setTimeout(() => {
-            setShowIntro(true);
-          }, 1000);
-        }, 4500)
-      },[]);
 
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
 
 
 
       if (data.length=== 0) {
         return (
           <>
-          <Layout>
           <Container>
            <div className={classes.notFound}>
-           
-              <Typography variant="h4" gutterBottom component="div" className={classes.text}>
+             <Typography variant="h4" gutterBottom component="div" className={classes.text}>
               No results found for{" "}
-                <span className=" underline">{title}</span> are you sure you
+                <span className={classes.searchText}>{title}</span> are you sure you
                 typed it correctly?
-            </Typography>
+              </Typography>
+           
           </div> 
           <Footer />
           </Container>
-          
-          </Layout>
-        </>
+         </>
         );
       }
 
  
   return (
     <>
-      <Layout>
-      <Container style={{display:'flex'}}>
-          <div className={classes.detailSearch}>
+      <Container>
+           <div className={classes.detailSearch}>
            <div>
              <h2 className={classes.text}>Search results for: {title}</h2>
    
@@ -64,9 +57,10 @@ function Search({data,title}) {
   
             </div>
             </div> 
-        </Container>
+    
          <Footer />
-       </Layout>
+      </Container>
+       
       </>  
 )
 }

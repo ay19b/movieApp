@@ -89,6 +89,10 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    searchText:{
+        fontSize: '2.6rem',
+        color: '#b00940'
+    },
 }));
 
 export default useStyles

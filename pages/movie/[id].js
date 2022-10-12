@@ -1,15 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Head from 'next/head';
-import CssBaseline from '@mui/material/CssBaseline';
-import NextLink from 'next/link';
-import Image from 'next/image';
-import Grid from '@mui/material/Divider';
-import Layout from "../../component/Layout";
-import { makeStyles } from '@mui/styles';
-import Container from '@mui/material/Container';
 import Loading from "../../component/loading/loading";
-import Typography from '@mui/material/Typography';
 import MovieInfo from "../../component/movieInfo/movieInfo";
 
 
@@ -33,7 +25,6 @@ function DetailMovie() {
 
     useEffect(() => {
       getMovies(movieId);
-      
     });
 
     useEffect(() => {

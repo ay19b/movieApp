@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
         animationName: '$scrollNav',
         animationDuration: '.4s',
         padding: '1%',
+        height: '72px',
     },
     ActiveSearch:{
         width: '100%',
@@ -88,6 +89,7 @@ const useStyles = makeStyles((theme) => ({
     inputForm:{
         border: '0.5px solid #757373',
         borderRadius: '6px',
+        width: '22rem',
     },
 }));
 
