@@ -63,11 +63,11 @@ const useStyles = makeStyles((theme) => ({
     leftSide:{
         display: "flex",
         alignItems: "center",
-        color:"white",
+        color:"#dbd5d5",
         justifyContent: "space-around",
     },
     iconSearch:{
-        color:"white",
+        color:"#dbd5d5",
         fontSize: "1.4rem",
     },
     rightSide:{
@@ -75,22 +75,34 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "space-around",
     },
 	btnRgst:{
-        background:' white',
+        background:' #dbd5d5',
         border: 'none',
         color: 'black',
         fontWeight: 'bold',
         '&:hover':{
-            background:'white', 
+            background:'#dbd5d5', 
         }
     },
     btnSng:{
-        color: 'white',
+        color: '#dbd5d5',
     },
     inputForm:{
-        border: '0.5px solid #757373',
-        borderRadius: '6px',
-        width: '22rem',
+        width: '75%',
     },
+    root: {
+        "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
+          borderColor: "#8e8e8e"
+        },
+        "& .MuiOutlinedInput-input": {
+          color: "#dbd5d5"
+        },
+        "& .MuiInputLabel-outlined": {
+          color: "#dbd5d5"
+        },
+        "& .MuiFormControl-root":{
+            width: '22rem'
+        },
+      },
 }));
 
 export default useStyles

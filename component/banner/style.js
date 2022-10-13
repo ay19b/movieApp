@@ -29,9 +29,9 @@ const useStyles = makeStyles((theme) => ({
         fontSize:'3rem',
     },
     btn:{
-        width: '10rem',
+        width: '8rem',
         padding: '8px',
-        fontSize: '15px',
+        fontSize: '1.05rem',
         backgroundColor: '#b00940',
         color: 'white',
         border: 'none',

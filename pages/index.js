@@ -10,22 +10,36 @@ import { useRouter } from "next/router";
 
 
 export default function Home() {
-  const [loading, setLoading] = useState(false);
+  const [showIntro, setShowIntro] = useState(undefined);
+  const [isLoading, setIsLoading] = useState(undefined);
 
 
   useEffect(() => {
-    setLoading(true);
     setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  }, []);
+      setIsLoading(true)
+      setTimeout(() => {
+        setShowIntro(true);
+      }, 1000);
+    }, 4500)
+  },[]);
 
-return (
+
+  
+  
+
+  return (
   <>
-   
-      {loading ?(
+   {!showIntro ?(
+      <>
+      {!isLoading ?(
          <Loading title={'molla'}/>
        ):(
+         <Loading title={'molla'}/>
+       )
+         
+       }
+      </>
+    ):(
       <>
        <Head>
         <title>molla</title>
@@ -38,14 +52,10 @@ return (
           {MoviesObj.map((Obj, Ind) => {
             return <Movies link={Obj.Request} genre={Obj.Title} key={Ind}/>;
            })}
-          <Footer />
        </Layout>
-      
       </>
     )
   }
     </>
   )
 }
-
-

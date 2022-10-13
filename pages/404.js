@@ -1,17 +1,22 @@
 import {HiOutlineEmojiSad} from "react-icons/hi";
 import Head from "next/head";
 import NextLink from 'next/link';
-import Error from '../component/error/error';
+
 
 function PageNotFound() {
     return (
       <>
        <Head>
-          <title>page not found</title>
+          <title>PageNotFound</title>
        </Head>
        <>
        
-        <Error />
+       <div className='error'>
+        <HiOutlineEmojiSad className='iconError'/>
+        <h1 className='textError'>404 error</h1>
+        <h2>We are sorry.the page you requested could not be found. Please go back to the homepage</h2>
+        
+       </div>
        </>
         
       </>

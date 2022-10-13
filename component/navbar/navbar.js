@@ -72,11 +72,13 @@ const handleSubmit = (e) => {
           <div>browser</div>
         </Grid>
         <Grid item xs={4} sm={4}>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className={classes.inputForm}>
            <TextField
+             fullWidth
              id="outlined-hidden-label-small"
              size="small"
              variant="outlined"
+             className={classes.root}
              value={searchText}
              onChange={(e) => setSearchText(e.target.value)}
              placeholder="Find movies,TV shows and more"

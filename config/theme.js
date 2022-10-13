@@ -22,7 +22,7 @@ palette: {
         borderColor: 'rgba(238, 194, 194, 0.23)!important',
         color: 'aliceblue',
     },
-    
-  }
+  },
+  
 });
 export default theme;

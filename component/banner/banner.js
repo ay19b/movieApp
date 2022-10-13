@@ -42,7 +42,7 @@ function Banner() {
          <h1 className={classes.title}>{data.name || data.title}</h1>
          <p className={classes.disc}>{truncateString(data?.overview, 200)}</p>
          <NextLink href={`movie/${data.id}`} passHref>
-            <button className={classes.btn}><BsFillPlayFill />Watch Now</button>
+            <button className={classes.btn}>Details</button>
          </NextLink>
       </div> 
     </div>

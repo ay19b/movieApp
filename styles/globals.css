@@ -73,16 +73,7 @@ a {
 .swiper-slide{
   width: 80%;
 }
-.css-1d3z3hw-MuiOutlinedInput-notchedOutline{
-  border-color: rgba(255, 255, 255, 0.23) !important;
-  color: aliceblue;
-}
-.css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root{
-  color:white !important;
-}
-.css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
-  width: 22rem !important;
-}
+
 .genre{
   margin-left: 5%;
   display: block ruby;
@@ -96,4 +87,30 @@ a {
 .calander{
   margin-right: 6px;
   color: red;
+}
+.error{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height:100vh;
+  text-align: center;
+}
+.iconError{
+  font-size:12rem;
+  color:white;
+}
+.textError{
+  margin-bottom:-24px
+}
+.btnError{
+  background-color: #b00940;
+  color: white;
+  font-size: 1.2rem;
+  width: 12rem;
+  padding:2px;
+  border-radius:10px;
+  padding:8px;
+  border:none;
+  cursor:pointer;
 }
