@@ -27,18 +27,37 @@ const useStyles = makeStyles((theme) => ({
     },
     title:{
         fontSize:'3rem',
+        [theme.breakpoints.down("md")]: {
+            fontSize:'2.5rem',
+        },
+        [theme.breakpoints.down("sm")]: {
+            fontSize:'2rem',
+        },
+    },
+    button:{
+        display: 'flex',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        position: 'relative',
+    },
+    svgPlay:{
+        fontSize: '2.9rem',
+        zIndex: '1',
+        borderRadius: '50%',
+        
     },
     btn:{
         width: '8rem',
-        padding: '8px',
+        padding: '8px 8px 8px 40px',
         fontSize: '1.05rem',
         backgroundColor: '#b00940',
         color: 'white',
-        border: 'none',
-        borderRadius: '6px',
+        border: '2px solid transparent',
+        borderRadius: '16px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        position: 'absolute',
         '&:hover':{
             cursor:'pointer',
             backgroundColor: '#A00940',
@@ -47,6 +66,12 @@ const useStyles = makeStyles((theme) => ({
     disc:{
         width: '40%',
         fontSize: '1.05rem',
+        [theme.breakpoints.down("md")]: {
+            width: '70%',
+        },
+        [theme.breakpoints.down("sm")]: {
+            width: '80%',
+        },
     },
 }));
 

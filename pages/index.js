@@ -7,6 +7,7 @@ import Head from 'next/head';
 import Layout from '../component/Layout';
 import Footer from '../component/footer/footer';
 import { useRouter } from "next/router";
+import { Container } from '@mui/material';
 
 
 export default function Home() {
@@ -53,6 +54,7 @@ export default function Home() {
             return <Movies link={Obj.Request} genre={Obj.Title} key={Ind}/>;
            })}
        </Layout>
+       <Footer />
       </>
     )
   }

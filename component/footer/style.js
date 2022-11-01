@@ -15,7 +15,19 @@ const useStyles = makeStyles((theme) => ({
 	headFooter:{
 		display: 'flex',
         justifyContent: 'space-between',
-		margin:'2rem 0 1rem 0'
+		margin:'2rem 0 1rem 0',
+		alignItems: 'baseline',
+		[theme.breakpoints.down("md")]: {
+            justifyContent: 'space-evenly',
+        },
+		[theme.breakpoints.down("sm")]: {
+			justifyContent: 'center',
+        },
+	},
+	socialMedia:{
+		[theme.breakpoints.down("sm")]: {
+            display: 'none',
+        },
 	},
     icons:{
 		display: 'flex',
@@ -34,7 +46,13 @@ const useStyles = makeStyles((theme) => ({
 		'&:hover':{
          color:'black',
 		 backgroundColor:'white'
-        }
+        },
+		
+	},
+	centerFooter:{
+		[theme.breakpoints.down("sm")]: {
+            display: 'none',
+        },
 	},
 	headerList:{
 		color:'white',
@@ -53,6 +71,9 @@ const useStyles = makeStyles((theme) => ({
 	divider:{
 		background: '#5b5b5b',
         width: '100%',
+		[theme.breakpoints.down("sm")]: {
+            display: 'none',
+        },
 	},
 }));
 

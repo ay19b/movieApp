@@ -10,7 +10,7 @@ import NextLink from 'next/link'
 import Image from 'next/image';
 import { useRouter } from "next/router";
 import styles from '../../styles/nav.module.css'
-
+import Container from '@mui/material/Container';
 
 
 
@@ -63,16 +63,17 @@ const handleSubmit = (e) => {
   
  
   return (
-    <nav className={!navbar?styles.navbar:classes.active}>
+    <nav className={!navbar?styles.navbar:styles.active}>
+      <Container maxWidth="xl">
       <Grid container spacing={2} className={!navbar?styles.listNav: styles.listNavActive}>
-        <Grid item xs={8} sm={4} className={styles.leftSide}>
+        <Grid item xs={3} sm={4} className={styles.leftSide}>
           <NextLink href="/" passHref>
                <Image src={Logo} />
           </NextLink>
-          <div>browser</div>
+          <div className={styles.browser}>browser</div>
         </Grid>
-        <Grid item xs={4} sm={4}>
-        <form onSubmit={handleSubmit} className={classes.inputForm}>
+        <Grid item xs={6} sm={4}>
+        <form onSubmit={handleSubmit} className={styles.inputForm}>
            <TextField
              fullWidth
              id="outlined-hidden-label-small"
@@ -90,12 +91,12 @@ const handleSubmit = (e) => {
            />
           </form> 
         </Grid>
-        <Grid item xs={4} sm={4} className={styles.rightSide}>
-          <Button  className={styles.btnRgst}>Register</Button>
+        <Grid item xs={2} sm={4} className={styles.rightSide}>
+          <Button  className={styles.btnRgst }>Register</Button>
           <Button className={styles.btnSng}>Sign in</Button>
         </Grid>
        </Grid>
-      
+       </Container>
     </nav>
 
   )

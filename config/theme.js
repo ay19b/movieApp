@@ -3,6 +3,15 @@ import { red } from '@mui/material/colors';
 
 // Create a theme instance.
 const theme = createTheme({
+  breakpoints:{
+    values: {
+      xs: 0,
+      sm: 500,
+      md: 800,
+      lg: 1200,
+      xl: 1500,
+    },
+  },
 palette: {
    primary: {
       main: '#556cd6',

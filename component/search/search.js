@@ -44,8 +44,8 @@ function Search({data,title}) {
 
  
   return (
-    <>
-      <Container>
+    
+      <>
            <div className={classes.detailSearch}>
            <div>
              <h2 className={classes.text}>Search results for: {title}</h2>
@@ -58,10 +58,10 @@ function Search({data,title}) {
             </div>
             </div> 
     
-         <Footer />
-      </Container>
+         
+            </>
        
-      </>  
+    
 )
 }
 

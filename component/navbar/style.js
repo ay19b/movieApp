@@ -4,18 +4,11 @@ import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({
     navbar:{
-        padding: '1%',
+        padding: '12px 1%',
         position: "absolute",
         zIndex: "11",
         display: 'flex',
         width:'100%',
-    },
-    NavSearch:{
-        display: 'flex',
-        padding: "25px 0 !important",
-        zIndex: "11",
-        position: "relative",
-        marginBottom: '8%',
     },
     active:{
         position: 'fixed',
@@ -24,18 +17,8 @@ const useStyles = makeStyles((theme) => ({
         background: '#10141f',
         animationName: '$scrollNav',
         animationDuration: '.4s',
-        padding: '1%',
+        padding: '12px 1%',
         height: '72px',
-    },
-    ActiveSearch:{
-        width: '100%',
-        zIndex: '1001',
-        position: 'fixed',
-        background: '#10141f',
-        paddingTop:' 5px !important',
-        animationName: '$scrollNav',
-        animationDuration: ".4s",
-        marginTop: "-4%",
     },
     '@keyframes scrollNav':{
         '0%' :{
@@ -64,7 +47,16 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         alignItems: "center",
         color:"#dbd5d5",
-        justifyContent: "space-around",
+        justifyContent: "space-between",
+        [theme.breakpoints.down("md")]: {
+            justifyContent: "flex-start",
+        },
+    },
+    browser:{
+        marginRight: '25%',
+        [theme.breakpoints.down("md")]: {
+            display:'none'
+        },
     },
     iconSearch:{
         color:"#dbd5d5",
@@ -72,30 +64,42 @@ const useStyles = makeStyles((theme) => ({
     },
     rightSide:{
         display: "flex",
-        justifyContent: "space-around",
+        justifyContent: "space-between",
+        [theme.breakpoints.down("md")]: {
+            justifyContent: "flex-end",
+        },
+        [theme.breakpoints.down("sm")]: {
+            justifyContent: "flex-start",
+        },
     },
 	btnRgst:{
         background:' #dbd5d5',
         border: 'none',
         color: 'black',
         fontWeight: 'bold',
+        [theme.breakpoints.down("md")]: {
+            display:'none'
+        },
         '&:hover':{
             background:'#dbd5d5', 
-        }
+        },
+        
     },
     btnSng:{
         color: '#dbd5d5',
+        display: 'block ruby',
     },
     inputForm:{
         width: '75%',
+        [theme.breakpoints.down("md")]: {
+            width: '100%',
+        },
     },
     root: {
         "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
           borderColor: "#8e8e8e"
         },
-        "& .MuiOutlinedInput-input": {
-          color: "#dbd5d5"
-        },
+        
         "& .MuiInputLabel-outlined": {
           color: "#dbd5d5"
         },

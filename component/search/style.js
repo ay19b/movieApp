@@ -30,12 +30,30 @@ const useStyles = makeStyles((theme) => ({
         color:'white',
         position: 'relative',
         cursor:'pointer',
+        [theme.breakpoints.down("md")]: {
+            height:'auto',
+            width: '12rem',
+            marginBottom: '2%'
+        },
+        [theme.breakpoints.down("sm")]: {
+            height:'auto',
+            width: '10rem',
+            marginBottom: '4%'
+        },
     },
     playMovie:{
         position: 'relative',
         textAlign: 'center',
         height: '19rem',
         width: '15rem',
+        [theme.breakpoints.down("md")]: {
+            height:'auto',
+            width: '100%',
+        },
+        [theme.breakpoints.down("sm")]: {
+            height:'auto',
+            width: '100%',
+        },
     },
     iconPlay:{
         fontSize: '4rem',

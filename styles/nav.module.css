@@ -1,26 +1,26 @@
 .navbar{
-    padding: 1%;
+    padding: 12px 1%;
     position: absolute;
     z-index: 11;
     display: flex;
     width: 100%;
-};
+}
 .NavSearch{
     display: flex;
     padding: 25px 0 !important;
     z-index: 11;
     position: relative;
     margin-bottom: 8%;
-};
+}
 .active{
     position: fixed;
     z-index:1001;
     width: 100%;
     background: #10141f;
-    padding-top: 15px !important;
+    padding: 12px 1%;
     animation-name: scrollNav;
     animation-duration: .4s;
-};
+}
 .ActiveSearch{
     width: 100%;
     z-index: 1001;
@@ -30,7 +30,7 @@
     animation-name: scrollNav;
     animation-duration: .4s;
     margin-top: -4%;
-};
+}
 @keyframes scrollNav{
     0%{
       opacity: 0;
@@ -40,17 +40,15 @@
       opacity: 1;
       transform: translateY(0);
     };
-};
+}
 .listNav{
     align-items: center;
-    position: fixed;
-};
+}
 .listNavActive{
-    background-color: black;
-    padding-bottom: 2%;
+    background-color: #10141f;
+    padding-bottom: 1%;
     align-items: center;
-    position: fixed;
-};
+}
 .logo{
     font-family: Sonsie One cursive;
 }
@@ -58,29 +56,72 @@
     display: flex ;
     align-items: center;
     color:white;
-    justify-content: space-around;
-};
+    justify-content: space-between;
+}
+.browser{
+    margin-right: 25%
+    
+}
 .iconSearch{
     color:white;
     font-size: 1.4rem;
 }
 .rightSide{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
+
 .btnRgst{
     background:white;
     border: none;
     color: black;
     font-weight: bold;
-};
+    margin-left: 10%;
+}
 .btnRgst:hover{
     background:white, 
-};
+}
 .btnSng{
     color: white;
-};
+}
 .inputForm{
     border: 0.5px solid #757373;
     border-radius: 6px;
-};
+}
+
+
+
+
+@media only screen and (max-width: 800px) {
+    .listNav{
+        align-items: center;
+        position: relative;
+    }
+    .listNavActive{
+        position: sticky;
+    }
+    .leftSide {
+        justify-content: flex-start;
+    }
+    .browser{
+        display:none
+    }
+    .rightSide{
+        justify-content: flex-end;
+    }
+    .btnRgst{
+        display: none;
+    }
+    .inputForm{
+        width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .rightSide{
+        justify-content: flex-start;
+    }
+    .btnSng{
+        display: block ruby;
+    }
+  }

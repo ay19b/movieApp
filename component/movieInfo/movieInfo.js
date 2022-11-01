@@ -12,6 +12,7 @@ import Loading from "../loading/loading";
 import useStyles from './style';
 import Typography from '@mui/material/Typography';
 import {GoCalendar} from "react-icons/go";
+import {BiTimeFive} from "react-icons/bi";
 import No from '../../public/No.jpg'
 import Footer from "../footer/footer";
 
@@ -27,12 +28,12 @@ function MovieInfo({ Data }) {
   const [isLoading, setIsLoading] = useState(true);
   const classes = useStyles();
   const [imageError, setImageError] = useState(false);
-  const img= `https://image.tmdb.org/t/p/w1280/${Data.poster_path}`
+  const img= `https://image.tmdb.org/t/p/w1280/${Data.poster_path}`;
 
 
+  
 
-
-
+ console.log(Data)
 
   return (
   <>
@@ -44,7 +45,7 @@ function MovieInfo({ Data }) {
     </Head> 
 
   <Layout >   
-  
+
   <div className={classes.detailMovie} >
       
   <img src={IMAGE_API + Data.backdrop_path}  className={classes.backGround}/>
@@ -58,38 +59,46 @@ function MovieInfo({ Data }) {
          )}
        </div> 
        <div className={classes.discMovie}>
-       <Typography variant="h3" gutterBottom component="div">
+       <h1>
           {Data.title}
-      </Typography>
+      </h1>
+      
       {Object.keys(genre).map((key) => {
          return (
            <div key={key} className={classes.infGenre}>
+           
               {genre[key||null].map((genre) => {
                 return (
                   <>
-                 <Typography  variant="h6" gutterBottom component="div"  key={genre.id} className='genre'>
-                  {genre.name}
+                 <Typography  variant="subtitle1" gutterBottom component="div"  key={genre.id} className='genre'>
+                   {genre.name}
                   </Typography>
                   
                   </>
                 )
                })}
-               <Typography variant="h6" gutterBottom component="div" className={classes.date}>
+              
+               <Typography variant="subtitle1" gutterBottom component="div" className={classes.date}>
                   <GoCalendar className='calander'/>{Data.release_date.split("-")[0]}
-                </Typography>
+               </Typography>
+               
+               <Typography variant="subtitle1" gutterBottom component="div" className={classes.date}>
+               <BiTimeFive className='calander'/>{Data.runtime} min
+               </Typography>
            </div>
          )
        })}
        <Typography variant="subtitle1" gutterBottom component="div" style={{marginTop: '1%'}}>
          {Data.overview}
       </Typography>
-          
        </div>
        
     </div>
     
   </div>
+  
   <Footer />
+
   </Layout>  
  
   </>

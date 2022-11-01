@@ -6,6 +6,7 @@ import Layout from "../../component/Layout";
 import useStyles from '../../component/search/style';
 import Loading from "../../component/loading/loading";
 import Search from "../../component/search/search";
+import Footer from "../../component/footer/footer";
 
 
 
@@ -43,16 +44,19 @@ function SearchPage() {
     <Head>
       <title>Showing Results for - {SearchTerm}</title>
     </Head>
-    <>
+   
     <Layout>
-      <Container style={{display:'flex'}}>
+    
+    <Container maxWidth="xl" style={{display:'flex'}}>
        {loading?(<Loading/>):(
          <Search data={search} title={SearchTerm} />
        )}
       </Container>
-       
+      
+      
      </Layout>
-    </>  
+     
+     
 
   </>
   )

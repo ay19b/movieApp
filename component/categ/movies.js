@@ -28,7 +28,7 @@ export default function Movies({link,genre}) {
 
   return (
     <div className={classes.movies}>
-       <Container>
+       <Container maxWidth="xl">
          <div className={classes.headProdRight}>
             <Typography variant='h5'>{genre}</Typography>
             <Typography variant='h3'className={classes.icon}><RiArrowDropRightLine /></Typography>

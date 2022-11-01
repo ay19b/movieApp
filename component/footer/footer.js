@@ -20,15 +20,15 @@ const Footer = () => {
   
   return (
     <div className={classes.footer}>
-      <Container>
+      <Container maxWidth="xl">
 	  <Grid container spacing={2} className={classes.headFooter} >
-        <Grid item xs={8} sm={4} className={classes.titleFooter} >
+        <Grid item xs={4} sm={4} className={classes.titleFooter} >
 		  <NextLink href="/" passHref>
                <Image src={Logo} />
           </NextLink>
 		  <Divider className={classes.divider}/>
         </Grid>
-        <Grid item xs={4} sm={4}>
+        <Grid item xs={4} sm={4} className={classes.socialMedia}>
            <div className={classes.icons} >
              <li className={classes.item}><Typography variant='h6' className={classes.icon}><BsTwitter /></Typography></li>
              <li className={classes.item}><Typography variant='h6' className={classes.icon}><GrFacebookOption /></Typography></li>
@@ -38,7 +38,7 @@ const Footer = () => {
 		   <Divider className={classes.divider}/>
         </Grid>
        </Grid>
-       <Grid container spacing={2}>
+       <Grid container spacing={2} className={classes.centerFooter}>
            <Grid item sm={6} xs={12} md={3}>
 				     <ul className={classes.listItem}>
 					   <Typography variant="subtitle1" className={classes.headerList}>COMPANY</Typography>
