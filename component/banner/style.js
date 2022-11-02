@@ -24,6 +24,10 @@ const useStyles = makeStyles((theme) => ({
         color: 'white',
         paddingTop: '8rem',
         paddingLeft: '5%',
+		overflow: 'hidden',
+		[theme.breakpoints.down("sm")]: {
+            paddingTop: '7rem',
+        },
     },
     title:{
         fontSize:'3rem',
@@ -67,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
             width: '70%',
         },
         [theme.breakpoints.down("sm")]: {
-            width: '80%',
+            width: '95%',
         },
     },
 }));

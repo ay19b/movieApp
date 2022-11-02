@@ -6,8 +6,11 @@ const useStyles = makeStyles((theme) => ({
         width:'100vw',
         position:'relative',
         height:'43rem',
+		[theme.breakpoints.down("md")]: {
+            height: '100vh',
+        },
         [theme.breakpoints.down("sm")]: {
-            height: 'fit-content',
+            height: '20rem',
         },
         
     },
@@ -16,12 +19,13 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         top: '0%',
         width: '100%',
-        height: '100%',
+		height: '100%',
         color: 'white',
         paddingTop: '10rem',
 		[theme.breakpoints.down("md")]: {
             flexDirection: 'column',
             justifyContent: 'center',
+			
         },
     },
     contentMovie:{
@@ -38,6 +42,9 @@ const useStyles = makeStyles((theme) => ({
     },
     contImg:{
         position: 'relative',
+		[theme.breakpoints.down("sm")]: {
+            marginLeft: '-1rem',
+        },
     },
     img:{
         width:'13rem',
@@ -47,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     discMovie:{
-        width:'36%',
+        width:'50%',
 		marginLeft: '5rem',
         [theme.breakpoints.down("md")]: {
             width:'auto',
