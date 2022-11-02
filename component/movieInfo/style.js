@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
         position:'relative',
         height:'43rem',
         [theme.breakpoints.down("sm")]: {
-            height: 'calc(100vh + 100px)',
+            height: 'fit-content',
         },
         
     },
@@ -18,39 +18,45 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         height: '100%',
         color: 'white',
-        display: "flex",
         paddingTop: '10rem',
+		[theme.breakpoints.down("md")]: {
+            flexDirection: 'column',
+            justifyContent: 'center',
+        },
     },
-
+    contentMovie:{
+		display: "flex",
+		width: '90%',
+        margin: 'auto',
+		[theme.breakpoints.down("sm")]: {
+            flexDirection: 'column',
+        },
+	},
     backGround:{
         width:'100vw',
         height: '100%',
     },
     contImg:{
-        width:'30%',
-        [theme.breakpoints.down("md")]: {
-            width:'50%',
-        },
-        [theme.breakpoints.down("sm")]: {
-            width:'40%',
-        },
+        position: 'relative',
     },
     img:{
         width:'13rem',
-        position: 'absolute',
-        left: '0',
-        marginLeft: '4%',
         [theme.breakpoints.down("sm")]: {
-            width:'35%',
+            width:'12rem',
+			transform: 'translate(10%)',
         },
     },
     discMovie:{
         width:'36%',
+		marginLeft: '5rem',
         [theme.breakpoints.down("md")]: {
-            width:'57%',
+            width:'auto',
+			marginLeft: '2rem',
         },
         [theme.breakpoints.down("sm")]: {
-            width:'60%',
+			width: '100%',
+            marginLeft: 'auto',
+			marginBottom: '15px',
         },
     },
     inf:{
@@ -63,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
         marginTop:'4%',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
     },
     date:{
         display: 'flex',
@@ -102,6 +108,10 @@ const useStyles = makeStyles((theme) => ({
     btnSng:{
         color: 'white',
     },
+	divider:{
+		background: '#5b5b5b',
+        width: '100%',
+	},
 }));
 
 export default useStyles

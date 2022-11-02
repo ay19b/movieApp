@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
         color:'white',
         position: 'relative',
         cursor:'pointer',
+		[theme.breakpoints.down("sm")]: {
+          height: '20rem',
+        },
     },
     playMovie:{
         position: 'relative',
@@ -19,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
         height: '19rem',
         '&:hover':{
             transform: 'scale(1.03,1.03)',
+        },
+		[theme.breakpoints.down("sm")]: {
+          height: 'auto',
         },
     },
     iconPlay:{

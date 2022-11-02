@@ -48,6 +48,8 @@
     background-color: #10141f;
     padding-bottom: 1%;
     align-items: center;
+	position: relative;
+    justify-content: space-between;
 }
 .logo{
     font-family: Sonsie One cursive;
@@ -79,7 +81,7 @@
     margin-left: 10%;
 }
 .btnRgst:hover{
-    background:white, 
+    background:#ccc; 
 }
 .btnSng{
     color: white;
@@ -96,6 +98,7 @@
     .listNav{
         align-items: center;
         position: relative;
+		justify-content: space-between;
     }
     .listNavActive{
         position: sticky;
@@ -109,7 +112,7 @@
     .rightSide{
         justify-content: flex-end;
     }
-    .btnRgst{
+    .btnSng{
         display: none;
     }
     .inputForm{
@@ -120,8 +123,5 @@
   @media only screen and (max-width: 500px) {
     .rightSide{
         justify-content: flex-start;
-    }
-    .btnSng{
-        display: block ruby;
     }
   }

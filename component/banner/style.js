@@ -47,13 +47,10 @@ const useStyles = makeStyles((theme) => ({
         
     },
     btn:{
-        width: '8rem',
-        padding: '8px 8px 8px 40px',
-        fontSize: '1.05rem',
+        width: '7rem',
         backgroundColor: '#b00940',
         color: 'white',
-        border: '2px solid transparent',
-        borderRadius: '16px',
+        borderRadius: '6px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',

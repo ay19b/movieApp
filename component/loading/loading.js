@@ -9,7 +9,10 @@ const Loading = ({title}) => {
           <title>{title}</title> 
         </Head>
         <>
-          <div id="loader" className="nfLoader"></div>
+		 <div className='spinner'>
+		   <div className="dots"></div>
+		 </div>
+          
         </>
             
         </>

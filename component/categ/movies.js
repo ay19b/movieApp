@@ -4,6 +4,7 @@ import Container from '@mui/material/Container';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import useStyles from './style';
+import useMediaQuery from '@mui/material/useMediaQuery'
 import {RiArrowDropRightLine} from "react-icons/ri"
 import { SwiperSlide, Swiper } from 'swiper/react';
 import 'swiper/css';
@@ -12,6 +13,7 @@ import 'swiper/css';
 export default function Movies({link,genre}) {
   const [movies, setMovies] = useState([]);
   const classes = useStyles();
+  const matches = useMediaQuery('(max-width:500px)');
 
   const getMovies = (API) => {
     fetch(API)
@@ -42,7 +44,7 @@ export default function Movies({link,genre}) {
               
               {movies.length > 0 &&
                 movies.map((movie) => 
-                <SwiperSlide key={movie.id} style={{width:'15rem'}}>
+                <SwiperSlide key={movie.id} style={{width:matches?'12rem':'15rem'}}>
                     <Movie key={movie.id} {...movie} lin={`movie/${movie.id}`}/>
                 </SwiperSlide>
                 )}

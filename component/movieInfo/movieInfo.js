@@ -5,6 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import NextLink from 'next/link';
 import Image from 'next/image';
 import Grid from '@mui/material/Divider';
+import Divider from '@mui/material/Divider';
 import Layout from "../Layout";
 import { makeStyles } from '@mui/styles';
 import Container from '@mui/material/Container';
@@ -50,7 +51,7 @@ function MovieInfo({ Data }) {
       
   <img src={IMAGE_API + Data.backdrop_path}  className={classes.backGround}/>
     <div className={classes.grid}>
-
+    <div className={classes.contentMovie}>
     <div className={classes.contImg}>
         {Data.poster_path ? (
             <img src={IMAGE_API + Data.poster_path} alt={Data.title} className={classes.img}/>
@@ -92,13 +93,15 @@ function MovieInfo({ Data }) {
          {Data.overview}
       </Typography>
        </div>
-       
+	   
+     </div>  
+	 
     </div>
     
   </div>
   
-  <Footer />
-
+   
+   
   </Layout>  
  
   </>

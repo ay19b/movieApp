@@ -64,7 +64,7 @@ const handleSubmit = (e) => {
  
   return (
     <nav className={!navbar?styles.navbar:styles.active}>
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" minWidth="sm">
       <Grid container spacing={2} className={!navbar?styles.listNav: styles.listNavActive}>
         <Grid item xs={3} sm={4} className={styles.leftSide}>
           <NextLink href="/" passHref>
@@ -72,7 +72,7 @@ const handleSubmit = (e) => {
           </NextLink>
           <div className={styles.browser}>browser</div>
         </Grid>
-        <Grid item xs={6} sm={4}>
+        <Grid item xs={5} sm={4}>
         <form onSubmit={handleSubmit} className={styles.inputForm}>
            <TextField
              fullWidth
@@ -91,7 +91,7 @@ const handleSubmit = (e) => {
            />
           </form> 
         </Grid>
-        <Grid item xs={2} sm={4} className={styles.rightSide}>
+        <Grid item xs={4} sm={4} className={styles.rightSide}>
           <Button  className={styles.btnRgst }>Register</Button>
           <Button className={styles.btnSng}>Sign in</Button>
         </Grid>

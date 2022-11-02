@@ -37,7 +37,7 @@ function Banner() {
          <h1 className={classes.title}>{data.name || data.title}</h1>
          <p className={classes.disc}>{truncateString(data?.overview, 200)}</p>
          <NextLink href={`movie/${data.id}`} passHref>
-           <Button variant="contained" endIcon={<MdDoubleArrow />}>
+           <Button variant="contained" className={classes.btn} endIcon={<MdDoubleArrow />}>
              Details
            </Button>
          </NextLink>

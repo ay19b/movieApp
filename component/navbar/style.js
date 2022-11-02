@@ -77,9 +77,6 @@ const useStyles = makeStyles((theme) => ({
         border: 'none',
         color: 'black',
         fontWeight: 'bold',
-        [theme.breakpoints.down("md")]: {
-            display:'none'
-        },
         '&:hover':{
             background:'#dbd5d5', 
         },
@@ -88,6 +85,7 @@ const useStyles = makeStyles((theme) => ({
     btnSng:{
         color: '#dbd5d5',
         display: 'block ruby',
+		
     },
     inputForm:{
         width: '75%',
