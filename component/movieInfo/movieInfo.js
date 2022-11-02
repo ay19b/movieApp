@@ -4,7 +4,6 @@ import Head from 'next/head';
 import CssBaseline from '@mui/material/CssBaseline';
 import NextLink from 'next/link';
 import Image from 'next/image';
-import Grid from '@mui/material/Divider';
 import Divider from '@mui/material/Divider';
 import Layout from "../Layout";
 import { makeStyles } from '@mui/styles';
@@ -19,7 +18,7 @@ import Footer from "../footer/footer";
 
 
 
-const IMAGE_API = "https://image.tmdb.org/t/p/w1280";
+
 
 
 function MovieInfo({ Data }) {
@@ -29,7 +28,7 @@ function MovieInfo({ Data }) {
   const [isLoading, setIsLoading] = useState(true);
   const classes = useStyles();
   const [imageError, setImageError] = useState(false);
-  const img= `https://image.tmdb.org/t/p/w1280/${Data.poster_path}`;
+  const IMAGE_API = "https://image.tmdb.org/t/p/w1280";
 
 
   
@@ -51,6 +50,7 @@ function MovieInfo({ Data }) {
       
   <img src={IMAGE_API + Data.backdrop_path}  className={classes.backGround}/>
     <div className={classes.grid}>
+	  <Container maxWidth="xl" minWidth="sm"> 
     <div className={classes.contentMovie}>
     <div className={classes.contImg}>
         {Data.poster_path ? (
@@ -95,7 +95,7 @@ function MovieInfo({ Data }) {
        </div>
 	   
      </div>  
-	 
+	  </Container>
     </div>
     
   </div>

@@ -19,7 +19,7 @@ export default function Layout({children,nav,normal,active}) {
       
       
       <CssBaseline />
-        <Navbar searchTerm={searchTerm} handleOnChange={handleOnChange} nav={nav} />
+      <Navbar searchTerm={searchTerm} handleOnChange={handleOnChange} nav={nav} />
         
            {children}
        

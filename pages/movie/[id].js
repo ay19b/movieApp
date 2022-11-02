@@ -33,12 +33,12 @@ function DetailMovie() {
         setTimeout(() => {
           setShowIntro(true);
         }, 1000);
-      }, 4500)
+      }, 2500)
     },[]);
 
 
   return (
-    <>
+    <div className="Detail">
     {!showIntro ?(
        <>
        {!isLoading ?(
@@ -50,17 +50,17 @@ function DetailMovie() {
        </>
      ):(
       <>
-      <Head>
-        <title>{movies.title}</title>
-      </Head> 
-    <>   
-      <MovieInfo Data={movies}/>
-    </>  
+        <Head>
+           <title>{movies.title}</title>
+        </Head> 
+        <>   
+          <MovieInfo Data={movies}/>
+        </>  
 
-    </>
+      </>
      )
    }
-     </>
+     </div>
 )
 }
 

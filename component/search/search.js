@@ -59,7 +59,7 @@ function Search({data,title}) {
             </div> 
     
          
-            </>
+      </>
        
     
 )

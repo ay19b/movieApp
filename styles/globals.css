@@ -9,7 +9,12 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-
+.home{
+	background-color: #10141f !important;
+}
+.Detail,.search{
+	background-color: black !important;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -94,6 +99,7 @@ a {
   flex-direction: column;
   height:100vh;
   text-align: center;
+  color: white;
 }
 .iconError{
   font-size:12rem;

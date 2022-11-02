@@ -6,11 +6,13 @@ import NextLink from 'next/link';
 import Image from "next/image";
 
 
-const IMAGE_API = "https://image.tmdb.org/t/p/w1280";
+
 
 const Movie = ({ title, name,poster_path,vote_average,release_date,lin}) => {
- 
-  const classes = useStyles()
+  const IMAGE_API = "https://image.tmdb.org/t/p/w1280";
+  const classes = useStyles();
+
+  
   return (
   <NextLink href={lin} passHref>
     <div className={classes.product}>

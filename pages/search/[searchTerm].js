@@ -40,25 +40,22 @@ function SearchPage() {
 
       
   return (
-    <>
-    <Head>
-      <title>Showing Results for - {SearchTerm}</title>
-    </Head>
+    <div className="search">
+       <Head>
+         <title>Showing Results for - {SearchTerm}</title>
+       </Head>
    
-    <Layout>
+       <Layout>
     
-    <Container maxWidth="xl" style={{display:'flex'}}>
-       {loading?(<Loading/>):(
-         <Search data={search} title={SearchTerm} />
-       )}
-      </Container>
+        <Container maxWidth="xl" style={{display:'flex'}}>
+          {loading?(<Loading/>):(
+            <Search data={search} title={SearchTerm} />
+          )}
+        </Container>
       
       
-     </Layout>
-     
-     
-
-  </>
+       </Layout>
+   </div>
   )
 }
 

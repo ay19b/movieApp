@@ -7,7 +7,7 @@ import Image from "next/image";
 import No from '../../public/No.jpg'
 import Loading from "../loading/loading";
 
-const IMAGE_API = "https://image.tmdb.org/t/p/w1280";
+
 
 const Movie = ({ title, name,poster_path,release_date,vote_average,lin}) => {
   const img= `https://image.tmdb.org/t/p/w1280/${poster_path}`

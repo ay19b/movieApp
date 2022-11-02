@@ -6,7 +6,7 @@ import Image from "next/image";
 import nocover from '../../public/nocover.jpg'
 import {MdDoubleArrow} from "react-icons/md";
 import Button from '@mui/material/Button';
-
+import Container from '@mui/material/Container';
 
 function Banner() {
   const [data, setData] = useState({});
@@ -34,6 +34,7 @@ function Banner() {
     
     <div className={classes.banner} style={{ backgroundImage:`url(${img})`,backgroundRepeat: 'no-repeat',backgroundSize: 'cover' }}>
       <div className={classes.grid}>
+	    <Container maxWidth="xl" minWidth="sm"> 
          <h1 className={classes.title}>{data.name || data.title}</h1>
          <p className={classes.disc}>{truncateString(data?.overview, 200)}</p>
          <NextLink href={`movie/${data.id}`} passHref>
@@ -41,6 +42,7 @@ function Banner() {
              Details
            </Button>
          </NextLink>
+		  </Container> 
       </div> 
     </div>
     </>
