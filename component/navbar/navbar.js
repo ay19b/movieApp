@@ -32,7 +32,7 @@ function Navbar({navNormal,navActive}) {
 
   
  const changeBackground=()=>{
-    if(window.scrollY>=60){
+    if(window.scrollY>=5){
       setNavbar(true)
       setNav(false)
     }else{

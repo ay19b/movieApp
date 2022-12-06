@@ -6,6 +6,7 @@ const useStyles = makeStyles((theme) => ({
     detailSearch:{
         position:'relative',
         marginTop: '7rem',
+        minHeight: "13rem"
     },
     text:{
         color:'white'

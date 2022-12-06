@@ -5,7 +5,7 @@ import { makeStyles } from '@mui/styles';
 const useStyles = makeStyles((theme) => ({
     navbar:{
         padding: '12px 1%',
-        position: "absolute",
+        position: 'fixed',
         zIndex: "11",
         display: 'flex',
         width:'100%',
@@ -15,20 +15,8 @@ const useStyles = makeStyles((theme) => ({
         zIndex:'1001',
         width: '100%',
         background: '#10141f',
-        animationName: '$scrollNav',
-        animationDuration: '.4s',
         padding: '12px 1%',
         height: '72px',
-    },
-    '@keyframes scrollNav':{
-        '0%' :{
-          opacity: 0,
-          transform: 'translateY(-60px)',
-        },
-        '100%' :{
-          opacity: 1,
-          transform: 'translateY(0)',
-        },
     },
     listNav:{
         alignItems: 'center',

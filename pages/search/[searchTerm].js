@@ -52,9 +52,7 @@ function SearchPage() {
             <Search data={search} title={SearchTerm} />
           )}
         </Container>
-      
-      
-       </Layout>
+      </Layout>
    </div>
   )
 }
