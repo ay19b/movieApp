@@ -41,15 +41,7 @@ function Navbar({navNormal,navActive}) {
     }
   }
 
-useEffect(() => {
-  changeBackground()
-  window.addEventListener('scroll',changeBackground) 
-  if(showLinks){
-    setNavbar(false)
-  }
-})
-
-const handleSubmit = (e) => {
+const handleSubmit=(e)=>{
   e.preventDefault();
   setIsSearch(false);
   searchText==''?null:router.push(`/search/${searchText}`);
@@ -58,7 +50,14 @@ const handleSubmit = (e) => {
   }, 1000);
 };
 
-  
+useEffect(() => {
+  handleSubmit
+  changeBackground()
+  window.addEventListener('scroll',changeBackground) 
+  if(showLinks){
+    setNavbar(false)
+  }
+})
 
   
  

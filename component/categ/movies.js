@@ -8,6 +8,8 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import {RiArrowDropRightLine} from "react-icons/ri"
 import { SwiperSlide, Swiper } from 'swiper/react';
 import 'swiper/css';
+import { setCookie,getCookie} from 'cookies-next';
+
 
 
 export default function Movies({link,genre}) {

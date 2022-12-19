@@ -14,7 +14,6 @@ export default function Home() {
   const [showIntro, setShowIntro] = useState(undefined);
   const [isLoading, setIsLoading] = useState(undefined);
 
-
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(true)
@@ -23,10 +22,6 @@ export default function Home() {
       }, 1000);
     }, 2500)
   },[]);
-
-
-  
-  
 
   return (
   <>

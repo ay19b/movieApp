@@ -32,8 +32,6 @@ const Movie = ({ title, name,poster_path,vote_average,release_date,lin}) => {
         height={670}
       />
       )}
-      
-        
       </div>
       <div className="movie-info">
         <Typography variant='h6' className={classes.title}>{title || name}</Typography>

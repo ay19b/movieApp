@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState ,Suspense} from "react";
 import Container from '@mui/material/Container';
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -10,26 +10,24 @@ import Footer from "../../component/footer/footer";
 
 
 
+export async function getServerSideProps(ctx) {
+	var search = ctx.query.searchTerm;
+    const res = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=e210177d339cffde80c7bde18b504e93&language=en-US&query=${search}&page=1&include_adult=false`);
+	const data =await res.json();
+	
+    return {
+      props: {
+		 searchMovies:data
+	  },
+  }
+}
 
-function SearchPage() {
-  const classes = useStyles();
+function SearchPage({searchMovies}) {
+    const classes = useStyles();
     const router = useRouter();
     const SearchTerm = router.query.searchTerm;
-    const [search, setSearch] = useState([]);
     const [loading, setLoading] = useState(false);
 
-
- 
-      const getMovies = (Id) => {
-        fetch(Id)
-        .then((res) => res.json())
-        .then((data) => setSearch(data.results));
-      };
-  
-      useEffect(() => {
-        getMovies(`https://api.themoviedb.org/3/search/movie?api_key=e210177d339cffde80c7bde18b504e93&language=en-US&query=${SearchTerm}&page=1&include_adult=false`);
-        
-      });
 
       useEffect(() => {
         setLoading(true);
@@ -38,7 +36,7 @@ function SearchPage() {
         }, 2000);
       }, []);
 
-      
+
   return (
     <div className="search">
        <Head>
@@ -48,9 +46,9 @@ function SearchPage() {
        <Layout>
     
         <Container maxWidth="xl" style={{display:'flex'}}>
-          {loading?(<Loading/>):(
-            <Search data={search} title={SearchTerm} />
-          )}
+          <Suspense fallback={<Loading/>} >
+            <Search data={searchMovies.results} title={SearchTerm} />
+          </Suspense>
         </Container>
       </Layout>
    </div>

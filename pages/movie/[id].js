@@ -5,27 +5,27 @@ import Loading from "../../component/loading/loading";
 import MovieInfo from "../../component/movieInfo/movieInfo";
 
 
+export async function getServerSideProps(context) {
+	const { id } = context.query;
+    const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=e210177d339cffde80c7bde18b504e93`);
+	const data =await res.json();
+	
+    return {
+      props: {
+		 mov:data
+	  },
+  }
+}
 
-function DetailMovie() {
-  const [movies, setMovies] = useState([]);
+function DetailMovie({mov}) {
+  const [movies, setMovies] = useState(mov);
   const [title, setTitle] = useState(movies.title);
   const [showIntro, setShowIntro] = useState(undefined);
   const [isLoading, setIsLoading] = useState(undefined);
-  const router = useRouter();
-  const  id  = router.query.id;
-  const movieId =
-  "https://api.themoviedb.org/3/movie/"+id+"?api_key=e210177d339cffde80c7bde18b504e93";
 
 
-  const getMovies = (Id) => {
-      fetch(Id)
-      .then((res) => res.json())
-      .then((data) => setMovies(data));
-    };
 
-    useEffect(() => {
-      getMovies(movieId);
-    });
+  
 
     useEffect(() => {
       setTimeout(() => {
@@ -33,10 +33,10 @@ function DetailMovie() {
         setTimeout(() => {
           setShowIntro(true);
         }, 1000);
-      }, 2500)
+      }, 2000)
     },[]);
 
-
+console.log(movies)
   return (
     <div className="Detail">
     {!showIntro ?(

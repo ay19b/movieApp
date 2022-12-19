@@ -19,8 +19,6 @@ import Footer from "../footer/footer";
 
 
 
-
-
 function MovieInfo({ Data }) {
   const [movies, setMovies] = useState([]);
   const [genre, setGener] = useState([Data.genres]);
@@ -30,10 +28,6 @@ function MovieInfo({ Data }) {
   const [imageError, setImageError] = useState(false);
   const IMAGE_API = "https://image.tmdb.org/t/p/w1280";
 
-
-  
-
- console.log(Data)
 
   return (
   <>

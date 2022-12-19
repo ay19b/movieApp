@@ -8,7 +8,24 @@ import {MdDoubleArrow} from "react-icons/md";
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 
-function Banner() {
+
+export async function getServerSideProps() {
+      const res = await fetch('https://api.themoviedb.org/3/trending/movie/day?api_key=e210177d339cffde80c7bde18b504e93&language=en-US')
+      res.then((response) => response.json())
+       .then((data) => {
+          localStorage.setItem('data',data)
+       });
+  
+	
+    return {
+      props: {
+		 bann:localStorage.getItem('data')
+	  },
+  }
+}
+
+function Banner({bann}) {
+  console.log(bann)
   const [data, setData] = useState({});
   const classes = useStyles();
   const IMAGE_API = "https://image.tmdb.org/t/p/w1280";
@@ -16,7 +33,7 @@ function Banner() {
   const truncateString = (string, n) => {
     return string?.length > n ? string.substr(0, n - 1) + '...' : string
 }
-
+  
   useEffect(() => {
     const RandNum = Math.floor(Math.random() * 20);
     axios.get(
@@ -28,6 +45,9 @@ function Banner() {
       });
   }, []);
 
+
+   
+   
   
   return (
     <>
