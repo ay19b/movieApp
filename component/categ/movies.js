@@ -12,23 +12,9 @@ import { setCookie,getCookie} from 'cookies-next';
 
 
 
-export default function Movies({link,genre}) {
-  const [movies, setMovies] = useState([]);
+export default function Movies({movies,genre}) {
   const classes = useStyles();
   const matches = useMediaQuery('(max-width:500px)');
-
-  const getMovies = (API) => {
-    fetch(API)
-      .then((res) => res.json())
-      .then((data) => setMovies(data.results));
-  };
-
-
-  useEffect(() => {
-    getMovies(link);
-  }, [link]);
-
-  
 
   return (
     <div className={classes.movies}>

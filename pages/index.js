@@ -1,6 +1,6 @@
 import React, { useEffect, useState,Suspense} from 'react';
 import Movies from "../component/categ/movies";
-import MoviesObj from "../component/TMDB";
+import requests from "../component/TMDB";
 import Banner from "../component/banner/banner";
 import Loading from "../component/loading/loading";
 import Head from 'next/head';
@@ -10,7 +10,16 @@ import { useRouter } from "next/router";
 import { Container } from '@mui/material';
 
 
-export default function Home() {
+function Home({
+  PopularMovies,
+  familyMovies,
+  comedyMovies,
+  documentaries,
+  horrorMovies,
+  romanceMovies,
+  topRated,
+  trendingNow,
+}) {
   const [showIntro, setShowIntro] = useState(undefined);
   const [isLoading, setIsLoading] = useState(undefined);
 
@@ -44,10 +53,15 @@ export default function Home() {
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossOrigin="anonymous"/>  
        </Head> 
        <Layout>
-          <Banner />
-          {MoviesObj.map((Obj, Ind) => {
-            return <Movies link={Obj.Request} genre={Obj.Title} key={Ind}/>;
-           })}
+          <Banner movie={PopularMovies}/>
+          <Movies movies={PopularMovies} genre="Popular"/>
+          <Movies movies={topRated} genre="top rated"/>
+          <Movies movies={trendingNow} genre="Movies Trending"/>
+		  <Movies movies={horrorMovies} genre="Horror Movies"/>
+		  <Movies movies={comedyMovies} genre="comedy Movies"/>
+		  <Movies movies={documentaries} genre="Documentarie Movies"/>
+		  <Movies movies={romanceMovies} genre="Romantic Movies"/>
+		  <Movies movies={familyMovies} genre="Family Movies"/>
        </Layout>
        <Footer />
       </div>
@@ -55,4 +69,41 @@ export default function Home() {
   }
     </>
   )
+}
+
+export default Home 
+
+export const getServerSideProps = async () => {
+  const [
+    PopularMovies,
+    trendingNow,
+    topRated,
+    familyMovies,
+    comedyMovies,
+    horrorMovies,
+    romanceMovies,
+    documentaries,
+  ] = await Promise.all([
+    fetch(requests.fetchPopular).then((res) => res.json()),
+    fetch(requests.fetchTrending).then((res) => res.json()),
+    fetch(requests.fetchTopRated).then((res) => res.json()),
+    fetch(requests.fetchFamily).then((res) => res.json()),
+    fetch(requests.fetchComedyMovies).then((res) => res.json()),
+    fetch(requests.fetchHorrorMovies).then((res) => res.json()),
+    fetch(requests.fetchRomanceMovies).then((res) => res.json()),
+    fetch(requests.fetchDocumentaries).then((res) => res.json()),
+  ])
+
+  return {
+    props: {
+      PopularMovies: PopularMovies.results,
+      trendingNow: trendingNow.results,
+      topRated: topRated.results,
+      familyMovies: familyMovies.results,
+      comedyMovies: comedyMovies.results,
+      horrorMovies: horrorMovies.results,
+      romanceMovies: romanceMovies.results,
+      documentaries: documentaries.results,
+    },
+  }
 }
