@@ -57,11 +57,11 @@ function Home({
           <Movies movies={PopularMovies} genre="Popular"/>
           <Movies movies={topRated} genre="top rated"/>
           <Movies movies={trendingNow} genre="Movies Trending"/>
-		  <Movies movies={horrorMovies} genre="Horror Movies"/>
-		  <Movies movies={comedyMovies} genre="comedy Movies"/>
-		  <Movies movies={documentaries} genre="Documentarie Movies"/>
-		  <Movies movies={romanceMovies} genre="Romantic Movies"/>
-		  <Movies movies={familyMovies} genre="Family Movies"/>
+		      <Movies movies={horrorMovies} genre="Horror Movies"/>
+		      <Movies movies={comedyMovies} genre="comedy Movies"/>
+		      <Movies movies={documentaries} genre="Documentarie Movies"/>
+		      <Movies movies={romanceMovies} genre="Romantic Movies"/>
+		      <Movies movies={familyMovies} genre="Family Movies"/>
        </Layout>
        <Footer />
       </div>

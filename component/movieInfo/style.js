@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
         position:'relative',
         height:'43rem',
 		[theme.breakpoints.down("md")]: {
-            height: '100vh',
+            height: 'calc( 70vh + 10rem)',
         },
         [theme.breakpoints.down("sm")]: {
             height: '20rem',
@@ -25,7 +25,10 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down("md")]: {
             flexDirection: 'column',
             justifyContent: 'center',
-			
+			overflow: 'hidden'
+        },
+        [theme.breakpoints.down("sm")]: {
+            overflow: 'initial'
         },
     },
     contentMovie:{
@@ -78,13 +81,39 @@ const useStyles = makeStyles((theme) => ({
         marginTop:'4%',
         flexWrap: 'wrap',
     },
+    quality:{
+        display: 'flex',
+        alignItems: 'center',
+        marginBottom: '15px',
+        marginLeft: '4px',
+        marginTop:"12px",
+    },
+    pg:{
+        fontSize: '11px',
+        textTransform: 'uppercase',
+        color: '#21232b',
+        background: '#fff',
+        fontWeight: '700',
+        padding: '7px 11px',
+        lineHeight: '1', 
+    },
+    hd:{
+        background: 'transparent',
+        color: '#fff',
+        marginLeft: '9px',
+        border: '2px solid #fff',
+        padding: '5px 10px',
+        textTransform: 'uppercase',
+        lineHeight: '1', 
+        fontSize: '11px',
+        fontWeight: '700',
+    },
     date:{
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         marginLeft:'2%',
         marginTop: '2px',
-        color:'rgb(149, 147, 147)',
     },
     prg:{
         width:'60%',
@@ -118,6 +147,10 @@ const useStyles = makeStyles((theme) => ({
 	divider:{
 		background: '#5b5b5b',
         width: '100%',
+        display:'none',
+        [theme.breakpoints.down("sm")]: {
+            display:'block',
+        },
 	},
 }));
 

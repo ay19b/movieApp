@@ -51,17 +51,20 @@ const useStyles = makeStyles((theme) => ({
         
     },
     btn:{
-        width: '7rem',
-        backgroundColor: '#b00940',
-        color: 'white',
+        width: '8rem',
+        backgroundColor: 'transparent',
+        color: '#b00940',
+        fontWeight:'bold',
         borderRadius: '6px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         position: 'absolute',
+        border: '1px solid #b00940',
         '&:hover':{
             cursor:'pointer',
             backgroundColor: '#A00940',
+            color:"white",
         }
     },
     disc:{

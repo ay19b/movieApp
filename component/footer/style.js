@@ -6,7 +6,9 @@ const useStyles = makeStyles((theme) => ({
 	footer:{
         marginTop: '7%',
 		[theme.breakpoints.down("sm")]: {
-			 marginTop: '0%',
+			position: 'absolute',
+			bottom: '0',
+			width: '100%',
         },
 	},
 	titleFooter:{

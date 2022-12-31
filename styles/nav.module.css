@@ -39,6 +39,9 @@
       transform: translateY(0);
     };
 }
+.logo{
+    cursor: pointer;
+}
 .listNav{
     align-items: center;
 }

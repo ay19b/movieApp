@@ -67,7 +67,7 @@ useEffect(() => {
       <Grid container spacing={2} className={!navbar?styles.listNav: styles.listNavActive}>
         <Grid item xs={3} sm={4} className={styles.leftSide}>
           <NextLink href="/" passHref>
-               <Image src={Logo} />
+               <Image src={Logo} className={styles.logo}/>
           </NextLink>
           <div className={styles.browser}>browser</div>
         </Grid>

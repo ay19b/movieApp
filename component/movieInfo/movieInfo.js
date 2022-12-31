@@ -54,21 +54,21 @@ function MovieInfo({ Data }) {
          )}
        </div> 
        <div className={classes.discMovie}>
-       <h1>
-          {Data.title}
-      </h1>
-      
+       <Typography variant="h3">{Data.title}</Typography>
+      <div className={classes.quality}>
+        <span className={classes.pg}>Pg 18</span>
+        <span className={classes.hd}>hd</span>
+      </div>
       {Object.keys(genre).map((key) => {
          return (
            <div key={key} className={classes.infGenre}>
-           
+              
               {genre[key||null].map((genre) => {
                 return (
                   <>
                  <Typography  variant="subtitle1" gutterBottom component="div"  key={genre.id} className='genre'>
                    {genre.name}
                   </Typography>
-                  
                   </>
                 )
                })}
@@ -83,17 +83,15 @@ function MovieInfo({ Data }) {
            </div>
          )
        })}
-       <Typography variant="subtitle1" gutterBottom component="div" style={{marginTop: '1%'}}>
+       <Typography variant="subtitle1" gutterBottom component="div" style={{marginTop: '1%',color: 'rgb(149, 147, 147)'}}>
          {Data.overview}
       </Typography>
        </div>
-	   
      </div>  
 	  </Container>
     </div>
-    
   </div>
-  </Layout>  
+  </Layout>   
   <Footer />
   </>
 )
