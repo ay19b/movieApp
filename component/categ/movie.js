@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react';
 import useStyles from './style';
 import {BsFillStarFill} from "react-icons/bs";
 import Typography from '@mui/material/Typography';
@@ -11,27 +11,20 @@ import Image from "next/image";
 const Movie = ({ title, name,poster_path,vote_average,release_date,lin}) => {
   const IMAGE_API = "https://image.tmdb.org/t/p/w1280";
   const classes = useStyles();
+  const [loading, setLoading] = useState(true);
 
   
   return (
   <NextLink href={lin} passHref>
     <div className={classes.product}>
       <div className={classes.playMovie}>
-      {poster_path ? (
-        // eslint-disable-next-line jsx-a11y/alt-text
-        <Image
-        src={`https://image.tmdb.org/t/p/w1280/${poster_path}`}
-        width={500}
-        height={670}
+       <Image
+          src={`https://image.tmdb.org/t/p/w1280/${poster_path}`}
+          width={500}
+          height={670}
+          alt={poster_path}
       />
-      ) : (
-        // eslint-disable-next-line jsx-a11y/alt-text
-        <Image
-        src="no-cover.png"
-        width={500}
-        height={670}
-      />
-      )}
+      
       </div>
       <div className="movie-info">
         <Typography variant='h6' className={classes.title}>{title || name}</Typography>

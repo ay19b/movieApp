@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     List:{
         display: 'flex',
         flexWrap: 'wrap',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
     },
     movies:{
         marginBottom: '2%',

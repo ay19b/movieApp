@@ -8,6 +8,9 @@ const useStyles = makeStyles((theme) => ({
         height:'32rem',
         position: 'relative',
         marginBottom: '1.5rem',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     img:{
         height:'100%',
@@ -52,8 +55,7 @@ const useStyles = makeStyles((theme) => ({
     },
     btn:{
         width: '8rem',
-        backgroundColor: 'transparent',
-        color: '#b00940',
+        backgroundColor: '#A00940',
         fontWeight:'bold',
         borderRadius: '6px',
         display: 'flex',
@@ -63,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
         border: '1px solid #b00940',
         '&:hover':{
             cursor:'pointer',
-            backgroundColor: '#A00940',
+            backgroundColor: 'rgba(176, 9, 64,0.7)',
             color:"white",
         }
     },
