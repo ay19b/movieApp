@@ -4,9 +4,9 @@ import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({
     detailSearch:{
-        position:'relative',
-        marginTop: '7rem',
-        minHeight: "13rem"
+        position: 'absolute',
+        top: '8rem',
+        width: '95%',
     },
     text:{
         color:'white'

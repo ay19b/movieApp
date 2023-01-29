@@ -5,7 +5,7 @@ import { makeStyles } from '@mui/styles';
 const useStyles = makeStyles((theme) => ({
     banner:{
         width:'100%',
-        height:'32rem',
+        height:'95vh',
         position: 'relative',
         marginBottom: '1.5rem',
         display: 'flex',
@@ -54,7 +54,8 @@ const useStyles = makeStyles((theme) => ({
         
     },
     btn:{
-        width: '8rem',
+        width: '8.1rem',
+        padding:"7px",
         backgroundColor: '#A00940',
         fontWeight:'bold',
         borderRadius: '6px',

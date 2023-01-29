@@ -15,7 +15,7 @@ import {GoCalendar} from "react-icons/go";
 import {BiTimeFive} from "react-icons/bi";
 import No from '../../public/No.jpg'
 import Footer from "../footer/footer";
-
+import {ClipLoader} from 'react-spinners';
 
 
 
@@ -27,7 +27,15 @@ function MovieInfo({ Data }) {
   const classes = useStyles();
   const [imageError, setImageError] = useState(false);
   const IMAGE_API = "https://image.tmdb.org/t/p/w1280";
+  const [loading, setLoading] = useState(false);
 
+  useEffect(()=>{
+    setMovies()
+    setTimeout(()=>{
+      setLoading(true)
+    },1200)
+    setMovies(Data)
+  })
 
   return (
   <>

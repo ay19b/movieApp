@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
 import useStyles from './style';
 import {BsFillStarFill,BsFillPlayFill} from "react-icons/bs";
 import Typography from '@mui/material/Typography';
@@ -6,18 +6,19 @@ import NextLink from 'next/link';
 import Image from "next/image";
 import No from '../../public/No.jpg'
 import Loading from "../loading/loading";
-
+import { SearchContext } from "../../context/searchContext"; 
 
 
 const Movie = ({ title, name,poster_path,release_date,vote_average,lin}) => {
   const img= `https://image.tmdb.org/t/p/w1280/${poster_path}`
   const classes = useStyles();
   const [imageError, setImageError] = useState(false);
-  
+  const { isOpen, toggleMenu } = useContext(SearchContext);
 
   return (
-    <NextLink href={lin} passHref>
-    <div className={classes.product}>
+
+  <div className={classes.product} >
+    <a href={lin}>
     <div className={classes.playMovie}>
       
        <Image
@@ -37,9 +38,9 @@ const Movie = ({ title, name,poster_path,release_date,vote_average,lin}) => {
         </div>
       </div>
 
-       
-    </div>
-  </NextLink>
+      </a>
+  </div>
+
   );
 };
 
