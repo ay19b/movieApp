@@ -100,7 +100,6 @@ function MovieInfo({ Data }) {
     </div>
   </div>
   </Layout>   
-  <Footer />
   </>
 )
 }
